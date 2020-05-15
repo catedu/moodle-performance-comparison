@@ -19,13 +19,13 @@ shell:
 	 ssh -p 22987 root@92.222.130.250
 
 test_s:
-	./test_runner.sh  clase1 "Test curso pequeño" ./data/testplanxs.jmx ./data/testusersxs.csv site_data.properties 
+	./test_runner.sh  clase1 "Test curso pequeño" ./data/testplanxs.jmx ./data/testusersxs.csv site_data.properties
 
 test_xl:
-	./test_runner.sh  clase1 "Test curso grande" ./data/testplanxsl.jmx ./data/testusersxl.csv site_data.properties 
+	./test_runner.sh  clase1 "Test curso grande" ./data/testplanxl.jmx ./data/testusersxl.csv site_data.properties 
 
 testx:
-	./test_runner.sh -u 5 -l 2  clase1 "15 de mayo" ./data/testplan.jmx ./data/testusers.csv site_data.properties 
+	./test_runner.sh -u 5 -l 2  clase1 "15 de mayo" ./data/testplan.jmx ./data/testusers.csv site_data.properties
 
 server:
 	docker-compose up -d
