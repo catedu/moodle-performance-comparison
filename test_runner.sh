@@ -138,7 +138,13 @@ fi
 # Uses the test plan specified in the CLI call.
 datestring=`date '+%Y%m%d%H%M'`
 logfile="logs/jmeter.$datestring.log"
+logfilel="logs/jmeterl.$datestring.log"
 runoutput="runs_outputs/$datestring.output"
+webout="web/$datestring" 
+
+if [ ! -d "$webout" ]; then 
+    mkdir "$webout"
+fi
 
 # Include logs string.
 includelogsstr="-Jincludelogs=$includelogs"
@@ -156,7 +162,10 @@ jmeterbin=${jmeter_path%/}/bin/jmeter
 $jmeterbin \
     -n \
     -j "$logfile" \
+    -l "$logfilel" \
     -t "$testplanfile" \
+    -e \
+    -o "$webout" \
     -Jusersfile="$testusersfile" \
     -Jgroup="$group" \
     -Jdesc="$description" \
