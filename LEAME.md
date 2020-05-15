@@ -23,3 +23,4 @@ make server
 localhost:8080
 ```
 
+En la carpeta web, se generan también los resultados individuales.
